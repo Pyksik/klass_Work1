@@ -1,0 +1,25 @@
+import random
+
+
+M = random.randint(2, 5)
+N = random.randint(2, 5)
+
+
+matrix_A = [[random.randint(1, 10) for j in range(N)] for i in range(M)]
+
+
+print("Исходная матрица A:")
+for row in matrix_A:
+    print(row)
+
+
+avg_column = []
+
+
+for j in range(N):
+    column_sum = sum(matrix_A[i][j] for i in range(M))
+    avg_column.append(column_sum / M)
+
+
+print("\nОдномерный массив с средними арифметическими каждого столбца:")
+print(avg_column)

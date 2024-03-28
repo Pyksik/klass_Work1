@@ -1,0 +1,20 @@
+import random
+
+matrix = [[random.randint(-10, 10) for j in range(4)] for i in range(7)]
+
+#
+print("Исходная матрица:")
+for row in matrix:
+    print(row)
+
+
+positive_sums = []
+
+# 
+for row in matrix:
+    positive_sum = sum(element for element in row if element > 0)
+    positive_sums.append(positive_sum)
+
+
+print("\nОдномерный массив с суммами положительных элементов каждой строки:")
+print(positive_sums)

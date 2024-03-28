@@ -1,0 +1,27 @@
+import random
+
+
+M = random.randint(2, 5)
+N = random.randint(2, 5)
+
+
+matrix = [[random.randint(1, 10) for j in range(N)] for i in range(M)]
+print("Исходная матрица:")
+for row in matrix:
+    print(row)
+
+
+min_value = min(min(row) for row in matrix)
+max_value = max(max(row) for row in matrix)
+
+
+min_index = [(i, row.index(min_value)) for i, row in enumerate(matrix) if min_value in row][0]
+max_index = [(i, row.index(max_value)) for i, row in enumerate(matrix) if max_value in row][0]
+
+
+matrix[min_index[0]][min_index[1]], matrix[max_index[0]][max_index[1]] = max_value, min_value
+
+print("\nМатрица после замены минимального и максимального элементов:")
+for row in matrix:
+    print(row)
+

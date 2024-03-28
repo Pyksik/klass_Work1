@@ -1,0 +1,25 @@
+import random
+
+
+M = random.randint(2, 5)
+N = random.randint(2, 5)
+
+
+matrix = [[random.randint(1, 10) for j in range(N)] for i in range(M)]
+
+
+print("Исходная матрица:")
+for row in matrix:
+    print(row)
+
+
+column_products = [1] * N  # Инициализируем массив произведений единицами
+
+
+for j in range(N):
+    for i in range(M):
+        column_products[j] *= matrix[i][j]
+
+
+print("\nОдномерный массив с произведениями элементов каждого столбца:")
+print(column_products)
