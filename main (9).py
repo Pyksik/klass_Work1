@@ -1,11 +1,11 @@
+import numpy as np
 
-M = 4
-N = 3
-B = [[1, 0, 2],
-     [0, 3, 4],
-     [5, 0, 6],
-     [0, 0, 7]]
-for x in B:
-    print(x)
-egor = sum(1 for x in B for elem in x if elem != 0)
-print(f"Количество ненулевых элементов в матрице: {egor}")
+matrix = np.random.randint(1, 100, size=(4, 4))
+
+print("Матрица:")
+print(matrix)
+
+x = [max(col) for col in matrix.T]
+
+print("Массив из максимальных элементов каждого столбца:")
+print(x)

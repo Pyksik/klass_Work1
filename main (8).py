@@ -1,5 +1,19 @@
+import numpy as np
 
-array1 = [1, 2, 3, 4, 1, 2, 3, 4, 5, 1, 2, 3, 1, 1, 2, 2, 3, 3]
-array2 = [3, 4, 5, 6, 7, 8, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 9, 10, 11, 12, 13, 14, 15]
-array3 = list(set(array1 + array2))
-print(array3)
+B = np.random.randint(-10, 10, size=(3, 3))
+
+print("Матрица B:")
+print(B)
+
+y = []
+for j in range(B.shape[1]):
+    x = 1
+    for i in range(B.shape[0]):
+        if B[i][j] > 0:
+            x *= B[i][j]
+    y.append(x)
+
+print("Массив с произведениями положительных элементов каждого столбца:")
+print(y)
+
+
